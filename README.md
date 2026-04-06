@@ -2,7 +2,7 @@
 
 A mobile app for tracking daily financial habits, monitoring spending patterns, managing goals, and gaining insights into personal money management. Built with **Flutter**, **Riverpod** state management, and **Clean Architecture** principles.
 
-## 🎯 Features
+##  Features
 
 ### 1. **Home Dashboard**
 - **Financial Summary Cards**: Current balance, total income, and total expenses at a glance
@@ -62,7 +62,7 @@ A comprehensive goal management system:
 - **Empty States**: Helpful empty state screens with clear messaging
 - **Visual Feedback**: Snackbar notifications for confirmations and user actions
 
-## 🏗️ Architecture
+## Architecture
 
 ### Clean Architecture Implementation
 
@@ -185,7 +185,7 @@ Local Data Source (SQLite)
 5. **Scalability**: Easy to add new features or modify existing ones without affecting other layers
 6. **Single Source of Truth**: Data sorted at provider level, not repeated in widgets
 
-## 🛠️ State Management
+##  State Management
 
 ### Riverpod Pattern
 - Uses `flutter_riverpod` (2.4.0) for reactive, type-safe state management
@@ -202,7 +202,7 @@ Local Data Source (SQLite)
 - **Type Safety**: Full type safety with Riverpod's compile-time checking
 - **Auto-caching**: Providers cache data and only refresh when dependencies change
 
-## 💾 Data Persistence
+##  Data Persistence
 
 ### SQLite Database
 - Local-first approach for offline functionality
@@ -217,7 +217,7 @@ Local Data Source (SQLite)
 - Complex queries for filtering and analytics
 - Aggregate functions for calculating totals and summaries
 
-## 📦 Dependencies
+##  Dependencies
 
 ### Core State Management & Dependency Injection
 - `flutter_riverpod`: ^2.4.0 - Type-safe, reactive state management with AsyncNotifier
@@ -243,7 +243,7 @@ Local Data Source (SQLite)
 - `json_serializable`: ^6.8.0 - JSON serialization code generation
 - `flutter_lints`: ^3.0.0 - Dart linting rules
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Flutter SDK (3.9.0 or higher)
@@ -302,7 +302,7 @@ Local Data Source (SQLite)
 - `/add-goal` - Create new goal
 - `/edit-goal` - Edit existing goal
 
-## 🎨 Design Philosophy
+##  Design Philosophy
 
 ### User Experience
 - **Intuitive**: Natural and familiar interactions
@@ -318,7 +318,7 @@ Local Data Source (SQLite)
 - **Spacing**: Consistent gaps and padding throughout
 - **Icons**: Material icons for clear visual indicators
 
-## 📊 Data Models
+##  Data Models
 
 ### Transaction Entity
 ```dart
@@ -355,7 +355,7 @@ class Goal {
 }
 ```
 
-## 🔒 Error Handling
+##  Error Handling
 
 ### Exception Hierarchy
 - `AppException` (base class)
@@ -374,7 +374,7 @@ class Goal {
 - `Success<T>` - Operation succeeded with data
 - `Failure<T>` - Operation failed with failure reason
 
-## 🔄 Transaction Categories
+##  Transaction Categories
 
 The app supports 9 transaction categories with emoji icons:
 
@@ -388,7 +388,7 @@ The app supports 9 transaction categories with emoji icons:
 8. 📈 **Investment** - Stock purchases, mutual funds, savings
 9. 📌 **Other** - Miscellaneous expenses that don't fit other categories
 
-## 📈 Analytics Features
+##  Analytics Features
 
 1. **Top Category Analysis** - Identifies and displays the highest spending category
 2. **Weekly Trends** - Week-over-week spending comparison with percentage change
@@ -402,7 +402,7 @@ The app supports 9 transaction categories with emoji icons:
 5. **Balance Calculations** - Real-time balance = Total Income - Total Expenses
 6. **Smart Sorting** - All lists sorted by date (newest first) at provider level for consistency
 
-## 🚦 App Lifecycle
+##  App Lifecycle
 
 1. **Initialization**: Service locator setup, dependency injection
 2. **Home Loading**: Load all transactions and goals on app start
@@ -410,7 +410,7 @@ The app supports 9 transaction categories with emoji icons:
 4. **Database Operations**: SQLite handles persistence
 5. **UI Update**: Provider notifies widgets of state changes
 
-## 💡 Key Architecture Decisions
+##  Key Architecture Decisions
 
 1. **Riverpod for State Management**: Chosen for type safety, excellent async handling, and modern reactive patterns
 2. **Local-First Architecture**: All data stored locally on device (no cloud backend) for simplicity and offline functionality
@@ -435,7 +435,7 @@ The app supports 9 transaction categories with emoji icons:
 9. **Custom Categories** - User-defined expense and income categories
 10. **Biometric Lock** - Fingerprint or Face ID security layer
 
-## 📝 Code Quality & Production Readiness
+##  Code Quality & Production Readiness
 
 ### Logging Best Practices
 - **debugPrint Instead of print()**: All logging uses `debugPrint()` which is tree-shaken in release builds (zero overhead)
@@ -451,13 +451,13 @@ The app supports 9 transaction categories with emoji icons:
 - **Single Responsibility**: Each widget, provider, and class has one clear purpose
 
 ### Active Maintenance
-- ✅ Zero compilation errors
-- ✅ Clean architecture adherence
-- ✅ Production-safe logging
-- ✅ Proper widget extraction and composition
-- ✅ Smart caching at provider level
+-  Zero compilation errors
+-  Clean architecture adherence
+-  Production-safe logging
+-  Proper widget extraction and composition
+-  Smart caching at provider level
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Database Issues
 - Clear app cache: `flutter clean`
@@ -471,7 +471,7 @@ The app supports 9 transaction categories with emoji icons:
 - Hot reload may not reflect state changes, use hot restart
 - Ensure all assets and dependencies are properly imported
 
-## 📄 License
+##  License
 
 This project is created for educational and practical purposes.
 
