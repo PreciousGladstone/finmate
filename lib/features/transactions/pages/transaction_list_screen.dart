@@ -13,6 +13,8 @@ import 'package:finmate/features/transactions/widgets/transaction_list_view.dart
 class TransactionListScreen extends ConsumerStatefulWidget {
   const TransactionListScreen({super.key});
 
+
+
   @override
   ConsumerState<TransactionListScreen> createState() => _TransactionListScreenState();
 }
@@ -62,7 +64,6 @@ class _TransactionListScreenState extends ConsumerState<TransactionListScreen> {
                   searchQuery: _searchQuery,
                   onAddTransaction: () =>
                       Navigator.pushNamed(context, AppRoutes.addTransaction),
-                  onEditTransaction: (id) => Navigator.pushNamed(context, '${AppRoutes.editTransaction}?id=$id'),
                   onDeleteTransaction: (id) =>
                       _showDeleteDialog(context, id),
                 ),

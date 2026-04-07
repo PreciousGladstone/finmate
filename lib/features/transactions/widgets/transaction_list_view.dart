@@ -1,3 +1,4 @@
+import 'package:finmate/core/router/route.dart';
 import 'package:finmate/features/shared/widgets/empty_state_widget.dart';
 import 'package:finmate/features/transactions/widgets/transaction_item.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,6 @@ class TransactionListView extends StatelessWidget {
   final String? filterType;
   final String? searchQuery;
   final VoidCallback onAddTransaction;
-  final Function(String) onEditTransaction;
   final Function(String) onDeleteTransaction;
 
   const TransactionListView({
@@ -20,7 +20,6 @@ class TransactionListView extends StatelessWidget {
     this.filterType,
     this.searchQuery,
     required this.onAddTransaction,
-    required this.onEditTransaction,
     required this.onDeleteTransaction,
   });
 
@@ -50,7 +49,7 @@ class TransactionListView extends StatelessWidget {
           date: dateFormat.format(tx.date),
           type: tx.type,
           isExpense: tx.type == TransactionType.expense,
-          onTap: () => onEditTransaction(tx.id),
+          onTap: () => Navigator.pushNamed(context, '${AppRoutes.transactionDetail}?id=${tx.id}'),
           onDelete: () => onDeleteTransaction(tx.id),
         );
       },
