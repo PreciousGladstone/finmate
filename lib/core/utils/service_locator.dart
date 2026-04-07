@@ -1,7 +1,12 @@
 import 'package:get_it/get_it.dart';
+import 'package:finmate/core/network/http_client.dart';
 import 'package:finmate/data/datasources/database_helper.dart';
 import 'package:finmate/data/datasources/goal_local_data_source.dart';
 import 'package:finmate/data/datasources/transaction_local_data_source.dart';
+import 'package:finmate/data/datasources/goal_remote_data_source.dart';
+import 'package:finmate/data/datasources/goal_remote_data_source_impl.dart';
+import 'package:finmate/data/datasources/transaction_remote_data_source.dart';
+import 'package:finmate/data/datasources/transaction_remote_data_source_impl.dart';
 import 'package:finmate/data/repositories/goal_repository_impl.dart';
 import 'package:finmate/data/repositories/transaction_repository_impl.dart';
 import 'package:finmate/domain/repositories/goal_repository.dart';
@@ -14,16 +19,28 @@ final getIt = GetIt.instance;
 
 /// Setup dependency injection
 void setupServiceLocator() {
+  // Network
+  getIt.registerSingleton<HttpClient>(HttpClient());
+
   // Database
   getIt.registerSingleton<DatabaseHelper>(DatabaseHelper());
 
-  // Data Sources
+  // Local Data Sources
   getIt.registerSingleton<TransactionLocalDataSource>(
     TransactionLocalDataSourceImpl(databaseHelper: getIt<DatabaseHelper>()),
   );
 
   getIt.registerSingleton<GoalLocalDataSource>(
     GoalLocalDataSourceImpl(databaseHelper: getIt<DatabaseHelper>()),
+  );
+
+  // Remote Data Sources
+  getIt.registerSingleton<TransactionRemoteDataSource>(
+    TransactionRemoteDataSourceImpl(getIt<HttpClient>()),
+  );
+
+  getIt.registerSingleton<GoalRemoteDataSource>(
+    GoalRemoteDataSourceImpl(getIt<HttpClient>()),
   );
 
   // Repositories
